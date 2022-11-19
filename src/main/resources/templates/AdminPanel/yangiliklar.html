@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Pages / Contact - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+  <link rel="stylesheet" th:href="@{/css/all.min.css}">
+
+  <link rel="stylesheet" th:href="@{/css/test.min.css}">
+  <!-- Favicons -->
+  <link href="assets1/img/favicon.png" rel="icon">
+  <link href="assets1/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets1/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets1/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets1/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets1/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets1/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.3.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a th:href="@{/admin-panel}" class="logo d-flex align-items-center">
+        <!--        <img src="assets1/img/logo.png" alt=""> -->
+        <span class="d-none d-lg-block">Book.uz</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar text-center text-primary">
+      <h3>Yangiliklar oynasi</h3>
+    </div><!-- End Search Bar -->
+
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/admin-panel}">
+          <i class="bi bi-grid"></i>
+          <span>Boshqaruv paneli</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/kitoblar}">
+          <i class="bi bi-journal-arrow-up"></i>
+          <span>Elektron kitoblar</span>
+        </a>
+      </li><!-- End eBooks Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/KitobBuyurtmalar}">
+          <i class="bi bi-journal-arrow-up"></i>
+          <span>Kitoblar</span>
+        </a>
+      </li><!-- End Books Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/qrKodliKitoblar}">
+          <i class="bi bi-qr-code"></i>
+          <span>QR kitoblar</span>
+        </a>
+      </li><!-- End QRbooks Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed bg-primary text-white" th:href="@{/yangiliklar}">
+          <i class="bi bi-newspaper text-white"></i>
+          <span>Yangiliklar</span>
+        </a>
+      </li><!-- End News Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/Tadbirlar}">
+          <i class="bi bi-award-fill "></i>
+          <span>Tadbirlar</span>
+        </a>
+      </li><!-- End Tadbirlar Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/Maqolalar}">
+          <i class="bi bi-globe2"></i>
+          <span>Maqolalar</span>
+        </a>
+      </li><!-- End Maqola Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/Buyurtmalar}">
+          <i class="bi bi-bookmark"></i>
+          <span>Buyurtmalar</span>
+        </a>
+      </li><!-- End Buyurtmalar Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/accertBook}">
+          <i class="bi bi-book-fill"></i>
+          <span>Kitob qabul</span>
+        </a>
+      </li><!-- End Kitob qabul Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/archive}">
+          <i class="bi bi-archive-fill"></i>
+          <span>Arxiv</span>
+        </a>
+      </li><!-- End Arxiv Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/contactPanel}">
+          <i class="bi bi-person-lines-fill"></i>
+          <span>Biz bilan bog'lanish</span>
+        </a>
+      </li><!-- End Biz bilan bog'lanish Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/aboutPanel}">
+          <i class="bi bi-microsoft-teams"></i>
+          <span>Biz haqimizda</span>
+        </a>
+      </li><!-- End Biz haqimizda Page Nav -->
+
+
+    </ul>
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Yangilik</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/admin-panel}">Home</a></li>
+          <li class="breadcrumb-item active">Yangilik</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- =================== go jadval ==================== -->
+
+    <section id="jadval">
+      <div class="row">
+        <div class="headers text-center text-primary mb-2">
+          <h2>Yangilik qo'shish</h2>
+        </div>
+        <div class="col-lg-12">
+          <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#insert">Yangilik
+            qo'shish</button>
+          <div class="scrols" style="overflow-x: scroll; max-width: 100%; min-width: 300px;">
+            <table class="table table-bordered border-primary mr-5 text-center" id="table1"
+              style="min-width: max-content;">
+              <thead>
+                <tr class="bg-primary text-white">
+                  <th scope="col">Id</th>
+                  <th scope="col">Yangilik nomi</th>
+                  <th scope="col">Yangilik vaqti</th>
+                  <th scope="col">Yangilik muqovasi</th>
+                  <th scope="col">Yangilik izoh</th>
+                  <th scope="col">Tahirlash / O'chirish</th>
+                </tr>
+              </thead>
+              <tbody id="tbody">
+              <tr th:each = "k : ${news}">
+                <td th:text="${k.id}"></td>
+                <td th:text="${k.sarlavha}"></td>
+                <td th:text="${k.sana}"></td>
+                <td><img th:src="@{${'/news/display/'+ k.id}}"
+                         class="card img-fluid"  style="width:100px" alt=""/></td>
+                <td th:text="${k.matni}"></td>
+                <td>
+                  <a href="#" class="btn btn-info" id="edit-btn" data-bs-toggle="modal" data-bs-target="#update" data-target="#myModaledit" th:data-eid='${k.id}'><ion-icon name="pencil-outline"></ion-icon>Tahrirlash</a>
+                  <a href="#" class="btn btn-danger ml-2" data-toggle="modal" id="btn-delate"  th:data-delateid='${k.id}'> <ion-icon name="trash-outline"> </ion-icon> O`chirish</a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- =================== end jadval ==================== -->
+
+
+    <hr class="my-5">
+
+    <!-- ======================= Qo'shish Modal ================== -->
+
+    <div class="modal fade modal-xl" id="insert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true" style="box-shadow: 50px 50px 100px rgba(0 ,0,0,0);">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary">Yangilik qo'shish</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="qoshishText">
+            <form id="form">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Yangilik sarlavhasi!</label>
+                    <div class="input-group">
+                      <input name="sarlavha" class="form-control" type="text" id="yangilikSarlavha"
+                             placeholder="Yangilik sarlavhasini kiriting!" required>
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_sarlavha"></span>
+                  </div>
+
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Yangilik vaqti!</label>
+                    <div class="input-group">
+                      <input name="sana" class="form-control" type="date" id="yangilikDateTime"
+                        placeholder="Yangilik vaqtini kiriting!" required>
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_date"></span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Yangilik muqovasi!</label>
+                    <div class="input-group">
+                      <input name="muqova" class="form-control" type="file" id="kitobMuqova" required>
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_yangilik"></span>
+                  </div>
+
+                  <div class="user my-3 text-left">
+                    <label for="izoh" class="text-primary"> - Matni</label>
+                    <div class="form-floating">
+                      <textarea name="matni" class="form-control" placeholder="Leave a comment here" id="izoh" required></textarea >
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_text"></span>
+                  </div>
+                 </div>
+                </div>
+              </form>
+            <small class="ml-3 text-danger text-left" id="insertError"></small>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="close2" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submit">Qo`shish</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= end Qo'shish Modal ================== -->
+
+    <!-- ======================= Taxrirlash Modal ================== -->
+
+    <div class="modal fade modal-xl" id="update" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true" style="box-shadow: 50px 50px 100px rgba(0 ,0,0,0);">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary">Yangilikni Taxrirlash << </h5>
+            <h5 name="id" class="modal-title text-primary ml-2 mr-2"  id="id1"></h5>
+            <h5 class="modal-title text-primary"> >></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="taxrirText">
+            <form id="form1">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Yangilik sarlavhasi!</label>
+                    <div class="input-group">
+                      <input name="sarlavha1" class="form-control" type="text" id="yangilikSarlavha1"
+                             placeholder="Yangilik sarlavhasini kiriting!" required>
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_sarlavha1"></span>
+                  </div>
+
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Yangilik vaqti!</label>
+                    <div class="input-group">
+                      <input name="sana1" class="form-control" type="date" id="yangilikDateTime1"
+                             placeholder="Yangilik vaqtini kiriting!" required>
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_date1"></span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Yangilik muqovasi!</label>
+                    <div class="input-group">
+                      <input name="muqova1" class="form-control" type="file" id="kitobMuqova1" required>
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_yangilik1"></span>
+                  </div>
+
+                  <div class="user my-3 text-left">
+                    <label for="izoh" class="text-primary"> - Matni</label>
+                    <div class="form-floating">
+                      <textarea name="matni1" class="form-control" placeholder="Leave a comment here" id="izoh1" required></textarea >
+                    </div>
+                    <span class="font-weight-bold" style="color: red" id="error_text1"></span>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <small class="ml-3 text-danger text-left" id="insertError1"></small>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="close3" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="updateNews">Taxrirlash</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ======================= end Taxrirlash Modal ================== -->
+
+
+
+    <!-- delete modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Yangilikni o'chirish</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">O'chirish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================== end delete modal =========================== -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>TheFuture</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="#">GoTigers</a>
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/js/test.min.js}"></script>
+
+  <script th:src="@{/js/demo.js}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+  <!-- Vendor JS Files -->
+
+  <script src="assets1/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets1/vendor/chart.js/chart.min.js"></script>
+  <script src="assets1/vendor/echarts/echarts.min.js"></script>
+  <script src="assets1/vendor/quill/quill.min.js"></script>
+  <script src="assets1/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets1/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets1/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets1/js/main.js"></script>
+
+<script type="text/javascript">
+
+  var baseUrl = window.location.origin;
+  $(document).on('click','#btn-delate',function (){
+    $(this).data("delateid");
+    var id=$(this).data("delateid")
+    alert(id+ " yangilik o'chirilsinmi ")
+    $.ajax({
+      type:'DELETE',
+      contentType: false,
+      url:"/delete1/"+id,
+      success: function () {
+        alert("Ma'lumotlar o'chirildi");
+        window.location="/yangiliklar"
+      },
+      error: function (e){
+        alert("O'chirilmadi")
+        window.location="/yangiliklar"
+      }
+    })
+  })
+
+  $(document).on('click','#edit-btn',function (){
+    $tr = $(this).closest('tr');
+    var data = $tr.children("td").map(function (){
+      return $(this).text();
+    }).get();
+    if (data[0]!=null){
+      $('#id1').text(data[0]);
+      $('#yangilikSarlavha1').val(data[1]);
+      $('#yangilikDateTime1').val(data[2]);
+      $('#izoh1').val(data[4]);
+    }
+  })
+
+
+
+
+
+  $(document).ready(function() {
+    $("#submit").click(function() {
+      var file = $("#kitobMuqova").val();
+      var sana=$("#yangilikDateTime").val();
+      var sarlavha=$("#yangilikSarlavha").val();
+      var izoh=$("#izoh").val();
+      var data = new FormData($("#form")[0]);
+      if (file === "" || sana === "" || sarlavha === "" || izoh==="") {
+        $("#submit").prop("disabled", false);
+        $('#loader').hide();
+        $("#kitobMuqova").css("border-color", "red");
+        $("#yangilikDateTime").css("border-color", "red");
+        $("#yangilikSarlavha").css("border-color", "red");
+        $("#izoh").css("border-color", "red");
+        $("#error_date").html("Maydonni to'ldiring.");
+        $("#error_yangilik").html("Maydonni to'ldiring.");
+        $("#error_sarlavha").html("Maydonni to'ldiring.");
+        $("#error_text").html("Maydonni to'ldiring.");
+      } else {
+        $("#kitobMuqova").css("border-color", "");
+        $("#yangilikDateTime").css("border-color", "");
+        $("#yangilikSarlavha").css("border-color", "");
+        $("#izoh").css("border-color", "");
+        $('#error_date').css('opacity', 0);
+        $('#error_yangilik').css('opacity', 0);
+        $('#error_sarlavha').css('opacity', 0);
+        $('#error_text').css('opacity', 0);
+        $.ajax({
+          type: 'POST',
+          enctype: 'multipart/form-data',
+          data: data,
+          url: "/image/saveNewsDetails",
+          processData: false,
+          contentType: false,
+          cache: false,
+          success: function(data, statusText, xhr) {
+            console.log(xhr.status);
+            if(xhr.status == "200") {
+              $("#form")[0].reset();
+              $('#success').css('display','block');
+              $("#error").text("");
+              window.location="yangiliklar"
+              $("#success").html("Yangilik joylandi.");
+              $('#success').delay(2000).fadeOut('slow');
+            }
+          },
+          error: function(e) {
+            $('#error').css('display','block');
+            $("#error").html("Xatolik");
+            $('#error').delay(5000).fadeOut('slow');
+            location.reload();
+          }
+        });
+      }
+    });
+  });
+
+  $(document).ready(function() {
+    $("#updateNews").click(function() {
+
+      var id=$("#id1").text();
+      if (id!=null){
+        var file = $("#kitobMuqova1").val();
+        var sana=$("#yangilikDateTime1").val();
+        var sarlavha=$("#yangilikSarlavha1").val();
+        var izoh=$("#izoh1").val();
+        var data = new FormData($("#form1")[0]);
+        if (file === "" || sana === "" || sarlavha === "" || izoh==="") {
+          $("#updateNews").prop("disabled", false);
+          $('#loader').hide();
+          $("#kitobMuqova1").css("border-color", "red");
+          $("#yangilikDateTime1").css("border-color", "red");
+          $("#yangilikSarlavha1").css("border-color", "red");
+          $("#izoh1").css("border-color", "red");
+          $("#error_date1").html("Maydonni to'ldiring.");
+          $("#error_yangilik1").html("Maydonni to'ldiring.");
+          $("#error_sarlavha1").html("Maydonni to'ldiring.");
+          $("#error_text1").html("Maydonni to'ldiring.");
+        } else {
+          $("#kitobMuqova1").css("border-color", "");
+          $("#yangilikDateTime1").css("border-color", "");
+          $("#yangilikSarlavha1").css("border-color", "");
+          $("#izoh1").css("border-color", "");
+          $('#error_date1').css('opacity', 0);
+          $('#error_yangilik1').css('opacity', 0);
+          $('#error_sarlavha1').css('opacity', 0);
+          $('#error_text1').css('opacity', 0);
+          $.ajax({
+            type: 'PUT',
+            enctype: 'multipart/form-data',
+            data: data,
+            url: "/updateNews/"+id,
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function(data, statusText, xhr) {
+              console.log(xhr.status);
+              if(xhr.status == "200") {
+                $("#form1")[0].reset();
+                $('#success').css('display','block');
+                $("#error").text("");
+                alert("Yangilik taxrirlandi")
+                window.location="yangiliklar"
+                $("#success").html("Yangilik joylandi.");
+                $('#success').delay(2000).fadeOut('slow');
+              }
+            },
+            error: function(e) {
+              $('#error').css('display','block');
+              $("#error").html("Xatolik");
+              alert("Yangilik taxrirlandi")
+              $('#error').delay(5000).fadeOut('slow');
+              location.reload();
+            }
+          });
+        }
+      }
+    });
+  });
+
+</script>
+ 
+
+</body>
+
+</html>

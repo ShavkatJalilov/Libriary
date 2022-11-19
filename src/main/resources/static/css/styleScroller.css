@@ -1,0 +1,35 @@
+@media only screen and (min-width: 1025px){
+    h1{
+        text-align: center;
+    }
+    .media-scroller{
+        display: grid;
+        gap: 1rem;
+        grid-auto-flow: column;
+        grid-auto-columns: 25%;
+        padding: 0 1rem 1rem;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        margin: 0 5rem 0;
+    }
+    .media-element{
+        display: grid;
+        grid-template-rows: min-content;
+        gap: 1rem;
+        padding: 1rem;
+        color: black;
+    }
+    .media-element>img{
+        inline-size: 100%;
+        aspect-ratio: 16/9;
+        object-fit: scale-down;
+    }
+    .snaps-inline{
+        scroll-snap-type: inline;
+        scroll-padding-inline: 1rem 1rem;
+    }
+
+    .snaps-inline>* {
+        scroll-snap-align: start;
+    }
+}

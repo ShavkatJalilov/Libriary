@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Admin | </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+  <link rel="stylesheet" th:href="@{/css/all.min.css}">
+
+  <link rel="stylesheet" th:href="@{/css/test.min.css}">
+  <!-- Favicons -->
+  <link href="assets1/img/favicon.png" rel="icon">
+  <link href="assets1/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets1/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets1/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets1/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets1/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <link href="assets1/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="admin-panel.html" class="logo d-flex align-items-center">
+        <!--        <img src="assets1/img/logo.png" alt="">-->
+        <span class="d-none d-lg-block">Book.uz</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar text-center text-primary">
+      <h3>Elektron kitoblar oynasi</h3>
+    </div><!-- End Search Bar -->
+
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed " th:href="@{/admin-panel}">
+          <i class="bi bi-grid"></i>
+          <span>Boshqaruv paneli</span>
+        </a>
+      </li>
+      <!-- End Dashboard Nav -->
+
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed bg-primary text-white" th:href="@{/kitoblar}">
+          <i class="bi bi-journal-arrow-up text-white"></i>
+          <span>Elektron kitoblar</span>
+        </a>
+      </li><!-- End eBooks Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed " th:href="@{/KitobBuyurtmalar}">
+          <i class="bi bi-book"></i>
+          <span>Kitoblar</span>
+        </a>
+      </li><!-- End Books Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed " th:href="@{/qrKodliKitoblar}">
+          <i class="bi bi-qr-code"></i>
+          <span>QR kitoblar</span>
+        </a>
+      </li><!-- End QR books Page Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/yangiliklar}">
+          <i class="bi bi-newspaper"></i>
+          <span>Yangiliklar</span>
+        </a>
+      </li><!-- End News Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/Tadbirlar}">
+          <i class="bi bi-award-fill"></i>
+          <span>Tadbirlar</span>
+        </a>
+      </li><!-- End Tadbirlar Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/Maqolalar}">
+          <i class="bi bi-globe2"></i>
+          <span>Maqolalar</span>
+        </a>
+      </li><!-- End Maqolalar Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/Buyurtmalar}">
+          <i class="bi bi-bookmark"></i>
+          <span>Buyurtmalar</span>
+        </a>
+      </li><!-- End Buyurtmalar Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/accertBook}">
+          <i class="bi bi-book-fill"></i>
+          <span>Kitob qabul</span>
+        </a>
+      </li><!-- End Kitob qabul Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/archive}">
+          <i class="bi bi-archive-fill"></i>
+          <span>Arxiv</span>
+        </a>
+      </li><!-- End Arxiv Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/contactPanel}">
+          <i class="bi bi-person-lines-fill"></i>
+          <span>Biz bilan bog'lanish</span>
+        </a>
+      </li><!-- End Biz bilan bog'lanish Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" th:href="@{/aboutPanel}">
+          <i class="bi bi-microsoft-teams"></i>
+          <span>Biz haqimizda</span>
+        </a>
+      </li><!-- End Biz haqimizda Page Nav -->
+    </ul>
+  </aside><!-- End Sidebar-->
+
+
+  <!-- ==================== link ==================== -->
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Elektron kitob yuklash</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/admin-panel}">Home</a></li>
+          <li class="breadcrumb-item active">Kitoblar</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- ==================  end link ===================== -->
+
+    <!-- =================== go jadval ==================== -->
+
+    <section id="jadval">
+      <div class="row">
+        <div class="headers text-center text-primary mb-2">
+          <h2>Bazaga kitob joylash</h2>
+        </div>
+        <div class="col-lg-12">
+          <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#insert">Kitob qo'shish</button>
+          <div class="scrols" style="overflow-x: scroll; max-width: 100%; min-width: 300px;">
+            <table class="table table-bordered border-primary mr-5 text-center" id="table1"
+              style="min-width: max-content;">
+              <thead>
+                <tr class="bg-primary text-white">
+                  <th scope="col">id</th>
+                  <th scope="col">Kitob nomi</th>
+                  <th scope="col">Kitob muallifi</th>
+                  <th scope="col">Kategoriya</th>
+                  <th scope="col">Janri</th>
+                  <th scope="col">Muqova</th>
+                  <th scope="col">Tahirlash / O'chirish</th>
+                </tr>
+
+
+<!--                  <td>-->
+<!--                    <div class="btn btn-success px-3 mx-3" data-bs-toggle="modal" data-bs-target="#insert"> <i-->
+<!--                        class="bi bi-pencil-fill"></i> Tahirlash</div>-->
+<!--                    <div class="btn btn-danger px-3 mx-3" data-bs-toggle="modal" data-bs-target="#delete"><i-->
+<!--                        class="bi bi-trash3-fill mr-2"></i> O'chirish-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                </tr>-->
+              </thead>
+              <tbody id="tbody" >
+              <tr th:each = "imageGallery : ${images}">
+                <td th:text="${imageGallery.id}"></td>
+                <td th:text="${imageGallery.name}"></td>
+                <td th:text="${imageGallery.muallif}"></td>
+                <td th:text="${imageGallery.category}"></td>
+                <td th:text="${imageGallery.janri}"></td>
+                <td><img th:src="@{${'/image/display/'+ imageGallery.id}}"
+                         class="card img-fluid"  style="width:100px" alt=""/></td>
+                <td>
+                  <a href="#" class="btn btn-info" id="edit-btn" data-bs-toggle="modal" data-bs-target="#update" data-target="#myModaledit" th:data-eid='${imageGallery.id}'><ion-icon name="pencil-outline"></ion-icon>Tahrirlash</a>
+                  <a href="#" class="btn btn-danger ml-2" data-toggle="modal" id="btn-delate"  th:data-delateid='${imageGallery.id}'> <ion-icon name="trash-outline"> </ion-icon> O`chirish</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- =================== end jadval ==================== -->
+
+
+
+    <!-- ======================= Qo'shish Modal ================== -->
+
+    <div class="modal fade modal-xl" id="insert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true" style="box-shadow: 50px 50px 100px rgba(0 ,0,0,0);">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary">Kitob qo'shish</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="qoshishText">
+            <form id="form">
+              <div class="row">
+
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label for="name" class="text-primary">- Kitob nomi!</label>
+                    <div class="input-group">
+                      <input name="name" class="form-control" type="text" id="name" placeholder="Kitob nomini kiriting!"
+                        required>
+                    </div>
+                    <span style="color: red" id="error_name"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label for="kitobMuallifi" class="text-primary">- Kitob muallifi!</label>
+                    <div class="input-group">
+                      <input name="muallif" class="form-control" type="text" id="kitobMuallifi" placeholder="Kitob muallifi" required>
+                    </div>
+                    <span style="color: red" id="error_muallif"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Kategoriyani tanglang!</label>
+                    <div class="input-group">
+                      <select name="category" class="form-select" aria-label="Kategoriyani tanglang" id="category">
+                        <option selected>Katago'riyani tanglang!</option>
+                        <option value="Jahon adabiyoti">Jahon adabiyoti</option>
+                        <option value="Badiy">Badiy</option>
+                      </select>
+                    </div>
+                    <span style="color: red" id="error_category"></span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Janrini tanglang!</label>
+                    <div class="input-group">
+                      <select name="janri" class="form-select" aria-label="Janrini tanglang" id="janri">
+                        <option selected>Janrini tanglang!</option>
+                        <option value="Hikoya">Hikoya</option>
+                        <option value="Asar">Asar</option>
+                        <option value="Roman">Roman</option>
+                      </select>
+                    </div>
+                    <span style="color: red" id="error_janri"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Kitob muqovasi!</label>
+                    <div class="input-group">
+                      <input name="image" class="form-control" type="file" id="image" required>
+                    </div>
+                    <span style="color: red" id="error_image"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Kitob fayli!</label>
+                    <div class="input-group">
+                      <input name="file" class="form-control" type="file" id="file" required>
+                    </div>
+                    <span style="color: red" id="error_file"></span>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <small class="ml-3 text-danger text-left" id="insertError"></small>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="close2" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submit">Qo`shish</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= end Qo'shish Modal ================== -->
+
+
+    <!-- ======================= Taxrirlash Modal ================== -->
+
+    <div class="modal fade modal-xl" id="update" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true" style="box-shadow: 50px 50px 100px rgba(0 ,0,0,0);">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary">Kitob Taxrirlash << </h5>
+            <h5 name="id" class="modal-title text-primary ml-2 mr-2"  id="id1"></h5>
+            <h5 class="modal-title text-primary"> >></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="taxrirlashText">
+            <form id="form1">
+              <div class="row">
+
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label for="name1" class="text-primary">- Kitob nomi!</label>
+                    <div class="input-group">
+                      <input name="name" class="form-control" type="text" id="name1" placeholder="Kitob nomini kiriting!"
+                             required>
+                    </div>
+                    <span style="color: red" id="error_name1"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label for="kitobMuallifi" class="text-primary">- Kitob muallifi!</label>
+                    <div class="input-group">
+                      <input name="muallif" class="form-control" type="text" id="kitobMuallifi1" placeholder="Kitob muallifi" required>
+                    </div>
+                    <span style="color: red" id="error_muallif1"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Kategoriyani tanglang!</label>
+                    <div class="input-group">
+                      <select name="category" class="form-select" aria-label="Kategoriyani tanglang" id="category1">
+                        <option selected>Katago'riyani tanglang!</option>
+                        <option value="Jahon adabiyoti">Jahon adabiyoti</option>
+                        <option value="Badiy">Badiy</option>
+                      </select>
+                    </div>
+                    <span style="color: red" id="error_category1"></span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Janrini tanglang!</label>
+                    <div class="input-group">
+                      <select name="janri" class="form-select" aria-label="Janrini tanglang" id="janri1">
+                        <option selected>Janrini tanglang!</option>
+                        <option value="Hikoya">Hikoya</option>
+                        <option value="Asar">Asar</option>
+                      </select>
+                    </div>
+                    <span style="color: red" id="error_janri1"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Kitob muqovasi!</label>
+                    <div class="input-group">
+                      <input name="image" class="form-control" type="file" id="image1" required>
+                    </div>
+                    <span style="color: red" id="error_image1"></span>
+                  </div>
+                  <div class="user my-3 text-left">
+                    <label class="text-primary">- Kitob fayli!</label>
+                    <div class="input-group">
+                      <input name="file" class="form-control" type="file" id="file1" required>
+                    </div>
+                    <span style="color: red" id="error_file1"></span>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <small class="ml-3 text-danger text-left" id="insertError1"></small>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="close3" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="update1">Taxrirlash</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= end Taxrirlash Modal ================== -->
+
+
+    <!-- ======================== delete modal ======================== -->
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
+  Launch demo modal
+</button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Kitobni o'chirish</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger">O'chirish</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================== end delete modal =========================== -->
+
+
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>TheFuture</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="#">GoTigers</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <script th:src="@{/js/jquery.min.js}"></script>
+
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+  <script th:src="@{/js/test.min.js}"></script>
+
+  <script th:src="@{/js/demo.js}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+  <script type="text/javascript">
+
+    var baseUrl = window.location.origin;
+$(document).on('click','#btn-delate',function (){
+  $(this).data("delateid");
+  var id=$(this).data("delateid")
+  alert(id)
+  $.ajax({
+    type:'DELETE',
+    contentType: false,
+    url:"/delete/"+id,
+    success: function () {
+      alert("Ma'lumotlar o'chirildi");
+      window.location="/kitoblar"
+    },
+    error: function (e){
+      alert("O'chirilmadi")
+      window.location="/kitoblar"
+    }
+  })
+})
+
+
+    $(document).ready(function() {
+      $("#update1").click(function () {
+        var id = $("#id1").text();
+        console.log(id);
+        if (id != null) {
+          var name = $("#name1").val();
+          var file = $("#image1").val();
+          var file1 = $("#file1").val();
+          var muallif = $("#kitobMuallifi1").val();
+          var category = $("#category1").val();
+          var janri = $("#janri1").val();
+          var data1 = new FormData($("#form1")[0]);
+          if (name === "" || file === "" || file1 === "" || janri === "" || category === "" || muallif === "") {
+            $('#loader').hide();
+            $("#name1").css("border-color", "red");
+            $("#image1").css("border-color", "red");
+            $("#janri1").css("border-color", "red");
+            $("#category1").css("border-color", "red");
+            $("#kitobMuallifi1").css("border-color", "red");
+            $("#file1").css("border-color", "red");
+            $("#error_name1").html("Maydonni to'ldiring.");
+            $("#error_image1").html("Maydonni to'ldiring.");
+            $("#error_file1").html("Maydonni to'ldiring.");
+            $("#error_janri1").html("Maydonni to'ldiring.");
+            $("#error_category1").html("Maydonni to'ldiring.");
+            $("#error_muallif1").html("Maydonni to'ldiring.");
+            $("#error_category1").html("Maydonni to'ldiring.");
+          } else {
+            $("#name1").css("border-color", "");
+            $("#image1").css("border-color", "");
+            $("#janri1").css("border-color", "");
+            $("#category1").css("border-color", "");
+            $("#kitobMuallifi1").css("border-color", "");
+            $("#file1").css("border-color", "");
+            $('#error_name1').css('opacity', 0);
+            $('#error_file1').css('opacity', 0);
+            $('#error_muallif1').css('opacity', 0);
+            $('#error_category1').css('opacity', 0);
+            $('#error_image1').css('opacity', 0);
+            $('#error_janri1').css('opacity', 0);
+
+            $.ajax({
+              type: 'PUT',
+              enctype: 'multipart/form-data',
+              data: data1,
+              url: "/update/" + id,
+              processData: false,
+              contentType: false,
+              cache: false,
+              success: function (data1, statusText, xhr) {
+                console.log(xhr.status);
+                if (xhr.status == "200") {
+                  $("#form1")[0].reset();
+                  $('#success').css('display', 'block');
+                  $("#error").text("");
+                  alert("Taxrirlandi")
+                  window.location="/kitoblar"
+                  $('#success').delay(2000).fadeOut('slow');
+
+                }
+              },
+              error: function (e) {
+                alert("taxrirlanmadi")
+                $('#error').css('display', 'block');
+                $("#error").html("Xatolik");
+                $('#error').delay(5000).fadeOut('slow');
+                location.reload();
+                window.location = "/kitoblar"
+              }
+            })
+          }
+        }
+      })
+    })
+
+
+    $(document).on('click','#edit-btn',function (){
+      $tr = $(this).closest('tr');
+      var data = $tr.children("td").map(function (){
+        return $(this).text();
+      }).get();
+      if (data[0]!=null){
+        $('#id1').text(data[0]);
+        $('#name1').val(data[1]);
+        $('#kitobMuallifi1').val(data[2]);
+        $('#category1').val(data[3]);
+        $('#janri1').val(data[4]);
+      }
+    })
+
+
+    $(document).ready(function () {
+      // document.getElementById("saqlash").click(function () {
+      //   document.getElementById("saqlash").innerText = "ozgardi";
+      //   // getHodim();
+      //   alert("[sdzfdxf")
+      // })
+
+    })
+
+    $(document).ready(function() {
+      $("#submit").click(function() {
+        var name = $("#name").val();
+        var file = $("#image").val();
+        var file1 = $("#file").val();
+        var muallif=$("#kitobMuallifi").val();
+        var category=$("#category").val();
+        var janri=$("#janri").val();
+        var data = new FormData($("#form")[0]);
+        if (name === "" || file === "" || file1 === "" || janri === "" || category==="" || muallif==="") {
+          $("#submit").prop("disabled", false);
+          $('#loader').hide();
+          $("#name").css("border-color", "red");
+          $("#image").css("border-color", "red");
+          $("#janri").css("border-color", "red");
+          $("#category").css("border-color", "red");
+          $("#kitobMuallifi").css("border-color", "red");
+          $("#file").css("border-color", "red");
+          $("#error_name").html("Maydonni to'ldiring.");
+          $("#error_image").html("Maydonni to'ldiring.");
+          $("#error_file").html("Maydonni to'ldiring.");
+          $("#error_janri").html("Maydonni to'ldiring.");
+          $("#error_category").html("Maydonni to'ldiring.");
+          $("#error_muallif").html("Maydonni to'ldiring.");
+          $("#error_category").html("Maydonni to'ldiring.");
+        } else {
+          $("#name").css("border-color", "");
+          $("#image").css("border-color", "");
+          $("#janri").css("border-color", "");
+          $("#category").css("border-color", "");
+          $("#kitobMuallifi").css("border-color", "");
+          $("#file").css("border-color", "");
+          $('#error_name').css('opacity', 0);
+          $('#error_file').css('opacity', 0);
+          $('#error_muallif').css('opacity', 0);
+          $('#error_category').css('opacity', 0);
+          $('#error_image').css('opacity', 0);
+          $('#error_janri').css('opacity', 0);
+          $.ajax({
+            type: 'POST',
+            enctype: 'multipart/form-data',
+            data: data,
+            url: "/image/saveImageDetails",
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function(data, statusText, xhr) {
+              console.log(xhr.status);
+              if(xhr.status == "200") {
+                $("#form")[0].reset();
+                $('#success').css('display','block');
+                $("#error").text("");
+                $("#success").html("Maxsulot joylandi.");
+                $('#success').delay(2000).fadeOut('slow');
+              }
+            },
+            error: function(e) {
+              $('#error').css('display','block');
+              $("#error").html("Xatolik");
+              $('#error').delay(5000).fadeOut('slow');
+              location.reload();
+            }
+          });
+        }
+      });
+    });
+
+
+
+
+    function getKitob() {
+      $.ajax({
+        url: baseUrl + "/image/show",
+        type: 'GET',
+        dataType: "json",
+        success: function (data) {
+          var tableBody = $('#table1 tbody');
+          if (data.left != 0) {
+            tableBody.empty();
+          }
+          $(data).each(function (index, element) {
+            tableBody.append('<tr>' + '<td>' + element.id + '</td>' + '<td>' + element.name + '</td>' + '<td>' + element.name+ '</td>' + '<td>' + element.id + '</td>' + '<td>' + element.muallif + '</td>' + '<a href="#" class="btn btn-info" id="edit-btn" ><i class="bi bi-cloud-download-fill mr-2"></i>  Kursga qo`shish</a>' + '<a href="#" class="btn btn-danger ml-2" > <i class="bi bi-trash3-fill mr-2"></i> O`chirish</a>' + '</td>' + '</tr>');
+          })
+        },
+        error: function (error) {
+          alert(error);
+        }
+
+      })
+    }
+
+  </script>
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets1/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets1/vendor/chart.js/chart.min.js"></script>
+  <script src="assets1/vendor/echarts/echarts.min.js"></script>
+  <script src="assets1/vendor/quill/quill.min.js"></script>
+  <script src="assets1/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets1/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets1/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets1/js/main.js"></script>
+
+
+
+
+</body>
+
+</html>

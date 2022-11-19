@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Books.uz</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- ICONS -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  <link rel="stylesheet" href="assets/css/ab.css">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a th:href="@{/index}">Books<span>.uz</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" th:href="@{/index}">Bosh sahifa</a></li>
+          <li class="dropdown scrollto"><a th:href="@{/books}"><span>Kitoblar</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a class="scrollto" th:href="@{/books}">Jahon adabiyoti</a></li>
+              <li><a class="scrollto" th:href="@{/books}">Badiy adabiyotlar</a></li>
+              <li><a class="scrollto" th:href="@{/books}">Ilmiy adabiyotlar</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" th:href="@{/booksOrder}">Kitob buyurtma</a></li>
+          <li><a class="nav-link scrollto" th:href="@{/news}">Yangiliklar</a></li>
+          <li><a class="nav-link scrollto " th:href="@{/about}">Biz haqimizda</a></li>
+          <li><a class="nav-link scrollto " th:href="@{/contact}">Biz bilan bog'lanish</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+
+            <div class="container" data-aos="fade-up">
+      
+              <header class="section-header1" data-aos="fade-in" data-aos-delay="200">
+                <h2>Biz bilang bog'laning</h2>
+              </header>
+      
+              <div class="row gy-4">
+      
+                <div class="col-lg-6">
+      
+                  <div class="row gy-4" data-aos="fade-in" data-aos-delay="200">
+                    <div class="col-md-6">
+                      <div class="info-box">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>Manzil</h3>
+                        <p>jizzax v,<br>Sharof Rashidov t, 6-uy</p>
+                      </div>
+                    </div>
+      
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                      <div class="info-box">
+                        <i class="bi bi-telephone"></i>
+                        <h3>Telefon</h3>
+                        <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                      </div>
+                    </div>
+      
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                      <div class="info-box">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@example.com<br>contact@example.com</p>
+                      </div>
+                    </div>
+      
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+                      <div class="info-box">
+                        <i class="bi bi-clock"></i>
+                        <h3>Xizmat ko'rsatish</h3>
+                        <p>Dushanba - Juma<br>9:00 - 17:00</p>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+      
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="400">
+                  <form id="form" method="post" class="php-email-form">
+                    <div class="row gy-4">
+      
+                      <div class="col-md-6">
+                        <input id="name" type="text" name="name" class="form-control" placeholder="Your Name" required>
+                      </div>
+      
+                      <div class="col-md-6 ">
+                        <input id="email" type="email" class="form-control" name="email" placeholder="Your Email" required>
+                      </div>
+      
+                      <div class="col-md-12">
+                        <input id="subject" type="text" class="form-control" name="subject" placeholder="Subject" required>
+                      </div>
+      
+                      <div class="col-md-12">
+                        <textarea id="message" class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                      </div>
+      
+                      <div class="col-md-12 text-center">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+      
+                        <button id="submit" class="btn btn-primary" type="submit">Xabarni yuborish</button>
+                      </div>
+      
+                    </div>
+                  </form>
+      
+                </div>
+      
+              </div>
+      
+            </div>
+      
+          </section><!-- End Contact Section -->
+  </main>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+    
+              <div class="col-lg-4 col-md-6 footer-contact">
+                <h3>Books<span>.uz</span></h3>
+                <p>
+                  O'zbekiston <br>
+                  Jizzax shaxar<br>
+                  Sharof Rashidov ko'chasi 6-uy <br><br>
+                  <strong>Phone:</strong> +998 (99) 031 08-12<br>
+                  <strong>Email:</strong> info@example.com<br>
+                </p>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 footer-links">
+                <h4>Foydali havolalar</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#hero">Bosh sahifa</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#jahon">Kitoblar</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#recent-blog-posts">Yangiliklar</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#about">Biz haqimizda</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#contact">Biz bilan aloqa qiling</a></li>
+                </ul>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 footer-links">
+                <h4>Bizning ijtimoiy tarmoqlarimiz</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, ad possimus. Culpa vel ipsum velit?</p>
+                <div class="social-links mt-3">
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                  <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+    
+        <div class="container py-4">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Books.uz</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="#">GoTigers</a>
+          </div>
+        </div>
+      </footer><!-- End Footer -->
+    
+      <div id="preloader"></div>
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+          class="bi bi-arrow-up-short"></i></a>
+    
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+    
+      <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+      var baseUrl=window.location.origin
+      $(document).ready(function() {
+        $("#submit").click(function() {
+          var name = $("#name").val();
+          var email=$("#email").val();
+          var subject=$("#subject").val();
+          var message=$("#message").val();
+          if (name === "" || email === "" || subject === "" || message === "") {
+            $("#submit").prop("disabled", false);
+            $('#loader').hide();
+            $("#name").css("border-color", "red");
+            $("#email").css("border-color", "red");
+            $("#subject").css("border-color", "red");
+            $("#message").css("border-color", "red");
+          } else {
+            $("#name").css("border-color", "");
+            $("#email").css("border-color", "");
+            $("#subject").css("border-color", "");
+            $("#message").css("border-color", "");
+            var data = new FormData($("#form")[0]);
+            $.ajax({
+              type: 'POST',
+              enctype: 'multipart/form-data',
+              data: data,
+              url: "/saveMessage",
+              processData: false,
+              contentType: false,
+              cache: false,
+              success: function(data, statusText, xhr) {
+                console.log(xhr.status);
+                if(xhr.status == "200") {
+                  $("#form")[0].reset();
+                  $('#success').css('display','block');
+                  $("#error").text("");
+                  $("#success").html("Xabar muavffaqiyatli yuborildi.");
+                  $('#success').delay(2000).fadeOut('slow');
+                }
+              },
+              error: function(e) {
+                $('#error').css('display','block');
+                $("#error").html("Xatolik");
+                $('#error').delay(5000).fadeOut('slow');
+                location.reload();
+              }
+            });
+          }
+        });
+      });
+
+    </script>
+    </body>
+    
+    </html>

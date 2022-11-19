@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tizimga kirish | Book.uz</title>
+  <link rel="stylesheet" th:href="@{/assets1/css/loginStyle.css}">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+<!--  <link rel="stylesheet" th:href="@{/css/all.min.css}">-->
+
+<!--  <link rel="stylesheet" th:href="@{/css/test.min.css}">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+<!--    <input type="checkbox" id="flip">-->
+
+    <div class="forms">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Tizimga kirish</div>
+          <form id="form">
+            <div class="input-boxes text-center">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input name="username1"  type="email" placeholder="Enter your username" id="username" required>
+              </div>
+              <span style="color: red" id="user_error"></span>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input name="password1" type="password" placeholder="Enter your password" id="password"  required>
+              </div>
+              <span style="color: red" id="password_error"></span>
+              <div class="button input-box text-center">
+                <button type="button" id="kirish" class="btn btn-primary w-75"
+                style="width: 100%; height: 80%; text-align: center; background: #0c84ff; color: white; border: none; padding: 2px 20px; font-size: 18px; border-radius: 5px;cursor: pointer; "
+                >Tizimga kirish</button>
+              </div>
+              <div>
+                <p>Ro'yhatan o'tmaganmisiz?</p>
+                <a th:href="@{/register}"  style="color: #106eea; text-decoration: none;"> Ro'yhatan o'tish</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script th:src="@{/js/jquery.min.js}"></script>
+
+<!--<script th:src="@{/js/bootstrap.bundle.min.js}"></script>-->
+
+<!--<script th:src="@{/js/test.min.js}"></script>-->
+
+<!--<script th:src="@{/js/demo.js}"></script>-->
+<!--<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>-->
+<!--<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>-->
+
+<script type="text/javascript">
+  var baseUrl = window.location.origin;
+
+    $(document).on("click","#kirish",function (){
+      var username = $('#username').val();
+      var password = $('#password').val();
+      if (username==="" || password===""){
+        $("#username").css("border-color", "red");
+        $("#password").css("border-color", "red");
+        $('#user_error').val("Maydonni to'ldiring");
+        $('#password_error').val("Maydonni to'ldiring");
+      }else{
+        $("#username").css("border-color", "");
+        $("#password").css("border-color", "");
+        $('#user_error').css('opacity', 0);
+        $('#password_error').css('opacity', 0);
+        var data=new FormData($("#form")[0]);
+        $.ajax({
+          type: 'POST',
+          enctype: 'multipart/form-data',
+          data: data,
+          url:baseUrl+"/loginKirish",
+          processData: false,
+          contentType: false,
+          cache: false,
+          success: function (data,statusText, info) {
+            if (info.status=="200"){
+              window.location="/booksOrder/"+data;
+            }
+            else if (info.status=="208"){
+              alert("xatolik")
+            }
+          },
+          error:function (e) {
+              alert("Login yoki parol xato!\nIltimos qaytadan kiriting.")
+            $("#username").val("");
+            $("#password").val("");
+            $("#username").css("border-color", "red");
+            $("#password").css("border-color", "red");
+            $('#user_error').val("Parol yoki login xato!");
+            $('#password_error').val("Parol yoki login xato!");
+          }
+        })
+      }
+    })
+
+
+</script>
+</html>

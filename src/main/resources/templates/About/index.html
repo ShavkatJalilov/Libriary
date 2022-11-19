@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Books.uz</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- ICONS -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  <link rel="stylesheet" href="assets/css/ab.css">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" th:href="@{/css/all.min.css}">
+
+  <link rel="stylesheet" th:href="@{/css/test.min.css}">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a th:href="@{/index}">Books<span>.uz</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Bosh sahifa</a></li>
+          <li class="dropdown scrollto"><a href="#jahon"><span>Kitoblar</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a class="scrollto" href="#jahon">Jahon adabiyoti</a></li>
+              <li><a class="scrollto" href="#badiy">Badiy adabiyotlar</a></li>
+              <li><a class="scrollto" href="#QR">QR kodli kitoblar</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" th:href="@{/login1}">Kitob buyurtma</a></li>
+          <li><a class="nav-link scrollto" href="#recent-blog-posts">Yangiliklar</a></li>
+          <li><a class="nav-link scrollto " href="#about">Biz haqimizda</a></li>
+          <li><a class="nav-link scrollto " href="#contact">Biz bilan bog'lanish</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-stretch">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-6 col-md-12" style="margin-top: 100px;" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-text mt-5">
+            <h1>Xush kelibsiz <span>Books.uz</span></h1>
+            <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, beatae.</h2>
+            <div class="d-flex">
+              <a href="#about" class="btn-get-started scrollto">Kitoblar</a>
+              <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="200">
+          <div class="imgs mb-5">
+            <img src="assets/img/Library-bro.png" alt="" width="100%" height="100%">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Jahon adabiyoti Section ======= -->
+    <section id="jahon" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+        <!-- <header class="section-header">
+          <h2>Jahon adabiyoti</h2>
+        </header> -->
+        <div class="section-title">
+
+          <div class="row">
+            <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="200">
+              <h1 class="logo"><a href="#" style="color:rgb(126, 126, 126);">Jahon<span style="color: #0d6efd;">
+                    adabiyotlari</span></a></h1>
+            </div>
+
+            <div class="barcha-books col-lg-6 col-md-12  mt-2" data-aos="fade-up" data-aos-delay="200">
+              <a th:href="@{/books}" style="font-size: 25px; align-items: center; cursor: pointer;">
+                Barcha kitoblar
+                <i class="bi bi-arrow-right-circle"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="200">
+          <div class="slide-container swiper">
+            <div class="slide-content">
+              <div class="card-wrapper swiper-wrapper">
+                <div class="col-3" th:each="k : ${jahon}">
+                  <div class="card swiper-slide" style="width: 250px;">
+                    <div class="card-img" style="width: 100%; height: 200px;">
+                      <img th:src="@{${'/image/display/'+ k.id}}" class="card-img-top" alt="..." height="200px">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-primary" th:text="${k.name}"></h5>
+                      <p class="card-text text-bold" th:text="${k.muallif}"></p>
+                      <p class="card-text" th:text="${k.janri}"></p>
+                      <a th:href="@{${'/download/'+ k.id}}" class="btn btn-primary">Yuklash<i
+                              class="bi bi-arrow-right-circle"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Jahon adabiyoti Section -->
+
+    <hr>
+
+    <!-- ======= Badiy adabiyoti Section ======= -->
+    <section id="badiy" class="about section-bg" style="background: #e7f6ff;">
+      <div class="container" data-aos="fade-up">
+        <!-- <header class="section-header1">
+          <h2>Badiy adabiyotlar</h2>
+        </header> -->
+        <div class="section-title">
+          <div class="row">
+            <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="200">
+              <h1 class="logo"><a href="#" style="color:rgb(126, 126, 126);">Badiy<span style="color: #0d6efd;">
+                    adabiyotlar</span></a></h1>
+            </div>
+
+            <div class="barcha-books col-lg-6 col-md-12  mt-2" data-aos="fade-left" data-aos-delay="200">
+              <a th:href="@{/books}" style="font-size: 25px; align-items: center; cursor: pointer;">
+                Barcha kitoblar
+                <i class="bi bi-arrow-right-circle"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="200">
+          <div class="slide-container swiper">
+            <div class="slide-content">
+              <div class="card-wrapper swiper-wrapper">
+                <div class="col-3" th:each="b : ${badiy}">
+                  <div class="card swiper-slide" style="width: 250px;">
+                    <div class="card-img" style="width: 100%; height: 200px;">
+                      <img th:src="@{${'/image/display/'+ b.id}}" class="card-img-top" alt="..." height="200px">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-primary" th:text="${b.name}"></h5>
+                      <p class="card-text text-bold" th:text="${b.muallif}"></p>
+                      <p class="card-text" th:text="${b.janri}"></p>
+                      <a th:href="@{${'/download/'+ b.id}}" class="btn btn-primary">Yuklash<i
+                              class="bi bi-arrow-right-circle"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Badiy adabiyoti Section -->
+
+    <hr>
+
+    <!-- ======= QR kitoblar Section ======= -->
+    <section id="QR" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+        <!-- <header class="section-header1">
+          <h2>QR kodli kitoblar</h2>
+        </header> -->
+        <div class="section-title">
+          <div class="row">
+            <div class="col-lg-6 col-md-12" data-aos="fade-left" data-aos-delay="200">
+              <h1 class="logo"><a href="#" style="color:rgb(126, 126, 126);">QR kodli<span style="color: #0d6efd;">
+                    kitoblar</span></a></h1>
+            </div>
+
+            <div class="barcha-books col-lg-6 col-md-12  mt-2" data-aos="fade-left" data-aos-delay="200">
+              <a th:href="@{/qRbooks}" style="font-size: 25px; align-items: center; cursor: pointer;">
+                Barcha kitoblar
+                <i class="bi bi-arrow-right-circle"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="200">
+          <div class="slide-container swiper">
+            <div class="slide-content">
+              <div class="card-wrapper swiper-wrapper">
+                <div class="col-3" th:each="i : ${QR}">
+                  <div class="card swiper-slide" style="width: 250px;">
+                    <div class="card-img" style="width: 100%; height: 200px;">
+                      <img th:src="@{${'/QRbooks/display/'+ i.id}}" class="card-img-top" alt="..." height="200px">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-primary" th:text="${i.name}"></h5>
+                      <p class="card-text text-bold" th:text="${i.muallif}"></p>
+                      <p class="card-text" th:text="${i.janri}"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End QR books Section -->
+    <hr>
+    <!-- ======= Order books Section ======= -->
+    <section id="order" class="about section-bg" style="background: #e7f6ff;">
+      <div class="container" data-aos="fade-up" >
+        <!-- <header class="section-header1">
+          <h2>Ilmiy adabiyotlar</h2>
+        </header> -->
+        <div class="section-title">
+          <div class="row">
+            <div class="col-lg-6 col-md-12" data-aos="fade-left" data-aos-delay="200">
+              <h1 class="logo"><a th:href="@{/login1}" style="color:rgb(126, 126, 126);">Buyurtma beriladigan<span style="color: #0d6efd;">
+                    kitoblar</span></a></h1>
+            </div>
+
+            <div class="barcha-books col-lg-6 col-md-12  mt-2" data-aos="fade-left" data-aos-delay="200">
+              <a th:href="@{/login1}" style="font-size: 25px; align-items: center; cursor: pointer;">
+                Barcha kitoblar
+                <i class="bi bi-arrow-right-circle"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="200">
+          <div class="slide-container swiper">
+            <div class="slide-content">
+              <div class="card-wrapper swiper-wrapper">
+                <div class="col-3" th:href="@{/login1}"  th:each="i : ${ijara}">
+                  <div class="card swiper-slide" style="width: 250px;">
+                    <div class="card-img"  style="width: 100%; height: 200px;">
+                      <img th:src="@{${'/display/'+ i.id}}" class="card-img-top" alt="..." height="200px">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-primary" th:text="${i.name}"></h5>
+                      <p class="card-text text-bold" th:text="${i.muallif}"></p>
+                      <p class="card-text" th:text="${i.janri}"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Order books Section -->
+
+
+    <hr>
+
+
+    <!-- ======= Manbalar soni (count) Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+        <header class="section-header1" data-aos="zoom-in" data-aos-delay="200">
+          <h2>Manbalar</h2>
+        </header>
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 " data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box ">
+              <i class="bi bi-layout-text-window-reverse"></i>
+              <span data-purecounter-start="0" data-purecounter-end="3000" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Jami kitoblar</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="count-box">
+              <i class="bi bi-globe"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Jahon adabiyoti</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="count-box">
+              <i class="bi bi-book"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Badiy adabiyotlari</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="800">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>QR kodli kitoblar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Manbalar soni (count) Section -->
+
+    <hr>
+
+    <!-- ======= Yangiliklar Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header1" data-aos="fade-up" data-aos-delay="200">
+          <h2>Yangiliklar</h2>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200" th:each="news : ${news}" >
+            <div class="post-box bg-white">
+              <div class="post-img"><img th:src="@{${'/news/display/'+ news.id}}" class="img-fluid" alt=""></div>
+              <span class="post-date" th:text="${news.sana}"></span>
+              <h3 class="post-title" th:text="${news.sarlavha}"></h3>
+              <a th:href="@{/news}" class="readmore stretched-link mt-auto"><span>Batafsil</span><i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="post-box bg-white">
+              <div class="post-img"><img src="assets/img/about.jpg" class="img-fluid" alt=""></div>
+              <span class="post-date">Mon, July 11</span>
+              <h3 class="post-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, perferendis!</h3>
+              <a th:href="@{/news}" class="readmore stretched-link mt-auto"><span>Batafsil</span><i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Yangiliklar Section -->
+
+    <hr>
+
+    <!-- ======= Tadbirlar Section ======= -->
+    <section id="tadbirlar" class="recent-blog-posts section-bg" style="background: #e7f6ff;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header1" data-aos="fade-up" data-aos-delay="200">
+          <h2>Tadbirlar</h2>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-4 " th:href="@{/tadbirlar1}" data-aos="fade-up" data-aos-delay="200" th:each="tadbir : ${allActiveImages}" >
+            <div class="post-box bg-white">
+              <div class="post-img"><img th:src="@{${'/Tadbirlar/display/'+ tadbir.id}}" class="img-fluid" alt=""></div>
+              <span class="post-date" th:text="${tadbir.sana}"></span>
+              <h3 class="post-title" th:text="${tadbir.sarlavha}"></h3>
+              <a th:href="@{/tadbirlar1}" class="readmore stretched-link mt-auto"><span>Batafsil</span><i
+                      class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- End Yangiliklar Section -->
+
+    <hr>
+    <!-- ======= Biz haqimizda Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <header class="section-header1">
+          <h2>Biz haqimizda</h2>
+        </header>
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h2>Kutubhonaning tashkil topishi</h2>
+              <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste amet omnis libero autem, rerum velit
+                voluptas? Ea ullam accusantium dicta.</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur numquam provident iure esse
+                recusandae quod nobis nostrum in veniam voluptas accusamus quaerat voluptate, sequi praesentium, iusto
+                reiciendis corporis libero repudiandae. Suscipit animi beatae minus at eius autem necessitatibus commodi
+                quos tempora adipisci magnam earum, vero temporibus consequatur doloribus nisi.
+              </p>
+              <div class="text-center text-lg-start" data-aos="fade-up" data-aos-delay="500">
+                <a th:href="@{/about}"
+                  class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Batafsil malumot</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Biz haqimizda Section -->
+
+    <hr>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header1" data-aos="fade-in" data-aos-delay="200">
+          <h2>Biz bilang bog'laning</h2>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4" data-aos="fade-in" data-aos-delay="200">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Manzil</h3>
+                  <p>jizzax v,<br>Sharof Rashidov t, 6-uy</p>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="info-box">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Telefon</h3>
+                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email</h3>
+                  <p>info@example.com<br>contact@example.com</p>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+                <div class="info-box">
+                  <i class="bi bi-clock"></i>
+                  <h3>Xizmat ko'rsatish</h3>
+                  <p>Dushanba - Juma<br>9:00 - 17:00</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-in" data-aos-delay="400">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input id="name" type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input id="email" type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input id="subject" type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea id="message" class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button id="submit" class="btn btn-primary" type="submit">Xabarni yuborish</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+    <hr>
+
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3>Books<span>.uz</span></h3>
+            <p>
+              O'zbekiston <br>
+              Jizzax shaxar<br>
+              Sharof Rashidov ko'chasi 6-uy <br><br>
+              <strong>Phone:</strong> +998 (99) 031 08-12<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Foydali havolalar</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Bosh sahifa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#jahon">Kitoblar</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#recent-blog-posts">Yangiliklar</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">Biz haqimizda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Biz bilan aloqa qiling</a></li>
+            </ul>
+          </div>
+
+          <!-- <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div> -->
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Bizning ijtimoiy tarmoqlarimiz</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, ad possimus. Culpa vel ipsum velit?
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Books.uz</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">GoTigers</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script th:src="@{/js/jquery.min.js}"></script>
+
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+  <script th:src="@{/js/test.min.js}"></script>
+
+  <script th:src="@{/js/demo.js}"></script>
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+<script type="text/javascript">
+  var baseUrl=window.location.origin
+  $(document).ready(function() {
+    $("#submit").click(function() {
+      var name = $("#name").val();
+      var email=$("#email").val();
+      var subject=$("#subject").val();
+      var message=$("#message").val();
+      if (name === "" || email === "" || subject === "" || message === "") {
+        $("#submit").prop("disabled", false);
+        $('#loader').hide();
+        $("#name").css("border-color", "red");
+        $("#email").css("border-color", "red");
+        $("#subject").css("border-color", "red");
+        $("#message").css("border-color", "red");
+      } else {
+        $("#name").css("border-color", "");
+        $("#email").css("border-color", "");
+        $("#subject").css("border-color", "");
+        $("#message").css("border-color", "");
+        var data = new FormData($("#form")[0]);
+        $.ajax({
+          type: 'POST',
+          enctype: 'multipart/form-data',
+          data: data,
+          url: "/saveMessage",
+          processData: false,
+          contentType: false,
+          cache: false,
+          success: function(data, statusText, xhr) {
+            console.log(xhr.status);
+            if(xhr.status == "200") {
+              $("#form")[0].reset();
+              $('#success').css('display','block');
+              $("#error").text("");
+              $("#success").html("Xabar muavffaqiyatli yuborildi.");
+              $('#success').delay(2000).fadeOut('slow');
+            }
+          },
+          error: function(e) {
+            $('#error').css('display','block');
+            $("#error").html("Xatolik");
+            $('#error').delay(5000).fadeOut('slow');
+            location.reload();
+          }
+        });
+      }
+    });
+  });
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" th:href="@{/css/all.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/test.min.css}">
+
+</head>
+<body class="bg-info">
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12  text-primary">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title text-bold my-3">Maxsulotlar jadvali</h3><br>
+                        <a href="/home" class="btn btn-success my-2">Maxsulot qo'shish</a>
+                    </div>
+                    <div class="card-body bg-dark">
+
+                                <table id="table" class=" table table-bordered text-center table-dark">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Nomi</th>
+                                                <th>Rasmi</th>
+                                                <th>Description</th>
+                                                <th>Narxi</th>
+                                                <th>Tahrirlash/O`chirish</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+                                        <tr th:each = "imageGallery, hh : ${images}">
+                                                <td th:text="${imageGallery.id}"></td>
+                                                <td th:text="${imageGallery.name}"></td>
+                                                <td><img th:src="@{${'/image/display/'+ imageGallery.id}}"
+                                                class="card img-fluid"  style="width:100px" alt=""/></td>
+                                                <td th:text="${imageGallery.description}"></td>
+                                                <td th:text="${imageGallery.price}"></td>
+                                            <td><a href="#" class="btn btn-info" id="edit-btn" data-toggle="modal" data-target="#myModaledit" data-eid='+element.id+'><ion-icon name="pencil-outline"></ion-icon>Tahrirlash</a>
+                                            <a href="#" class="btn btn-danger ml-2" data-toggle="modal" id="btn-delate"  data-delateid='+element.id+'> <ion-icon name="trash-outline"> </ion-icon> O`chirish</a></td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#table').DataTable();
+	} );
+	</script>
+</body>
+</html>
